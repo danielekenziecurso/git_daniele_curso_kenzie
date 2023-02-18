@@ -32,7 +32,6 @@ const LoginForm = () => {
     try {
       const response = await api.post("/sessions", data);
       setuser(response.data);
-      console.log(response.data.token)
       localStorage.setItem("@TOKEN",JSON.stringify(response.data.token));
       localStorage.setItem("@USERID", response.data.user);
       navigate("/home");
